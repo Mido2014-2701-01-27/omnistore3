@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniStore - Official Store</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="engage.css">
+  <link rel="stylesheet" href="wow.css">
+  <link rel="stylesheet" href="enhance.css">
+  <link rel="stylesheet" href="extras.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-icon">🌐</span> OmniStore
+    </div>
+
+    <div class="nav-controls">
+      <span id="user-display" class="user-welcome"></span>
+
+      <!-- Theme Switcher -->
+      <button id="theme-toggle" aria-label="Toggle Theme">☀️</button>
+
+      <!-- Language Selector -->
+      <select id="lang-select" class="lang-dropdown">
+        <option value="en">English 🇬🇧</option>
+        <option value="ar">العربية 🇸🇦</option>
+      </select>
+
+      <!-- Cart Trigger Button -->
+      <button id="cart-btn" class="cart-trigger-btn">
+        🛒 <span data-i18n="cart">Cart</span> (<span id="cart-count">0</span>)
+      </button>
+
+      <!-- Logout Button -->
+      <button id="logout-btn" class="logout-btn" data-i18n="logout">LOG OUT</button>
+    </div>
+  </header>
+
+  <!-- PROMO / AD CAROUSEL -->
+  <section class="promo-carousel" id="promo-carousel">
+    <div class="promo-track" id="promo-track">
+      <div class="promo-slide promo-slide-1">
+        <div class="promo-slide-content">
+          <span class="promo-tag">Limited Time</span>
+          <h3 class="promo-heading">10% Off Everything</h3>
+          <p class="promo-sub">Apply this code at checkout to save instantly</p>
+          <div class="promo-code-box">SAVE10</div>
+        </div>
+        <div class="promo-slide-icon">💸</div>
+      </div>
+      <div class="promo-slide promo-slide-2">
+        <div class="promo-slide-content">
+          <span class="promo-tag">Mega Deal</span>
+          <h3 class="promo-heading">20% Off Storewide</h3>
+          <p class="promo-sub">Our biggest discount, applied right at your cart</p>
+          <div class="promo-code-box">DISCOUNT20</div>
+        </div>
+        <div class="promo-slide-icon">🔥</div>
+      </div>
+      <div class="promo-slide promo-slide-3">
+        <div class="promo-slide-content">
+          <span class="promo-tag">New Here?</span>
+          <h3 class="promo-heading">15% Welcome Discount</h3>
+          <p class="promo-sub">A little something for first-time shoppers</p>
+          <div class="promo-code-box">WELCOME15</div>
+        </div>
+        <div class="promo-slide-icon">🎁</div>
+      </div>
+      <div class="promo-slide promo-slide-4">
+        <div class="promo-slide-content">
+          <span class="promo-tag">Gamers Rejoice</span>
+          <h3 class="promo-heading">25% Off Gaming Gear</h3>
+          <p class="promo-sub">Level up your setup for less this week</p>
+          <div class="promo-code-box">GAMER25</div>
+        </div>
+        <div class="promo-slide-icon">🎮</div>
+      </div>
+      <div class="promo-slide promo-slide-5">
+        <div class="promo-slide-content">
+          <span class="promo-tag">Weekend Only</span>
+          <h3 class="promo-heading">30% Off Flash Sale</h3>
+          <p class="promo-sub">Our steepest discount, gone by Monday</p>
+          <div class="promo-code-box">FLASH30</div>
+        </div>
+        <div class="promo-slide-icon">⚡</div>
+      </div>
+    </div>
+
+    <button id="promo-prev" class="promo-arrow promo-arrow-left" aria-label="Previous promo">&#10094;</button>
+    <button id="promo-next" class="promo-arrow promo-arrow-right" aria-label="Next promo">&#10095;</button>
+
+    <div class="promo-dots" id="promo-dots">
+      <span class="promo-dot active" data-index="0"></span>
+      <span class="promo-dot" data-index="1"></span>
+      <span class="promo-dot" data-index="2"></span>
+      <span class="promo-dot" data-index="3"></span>
+      <span class="promo-dot" data-index="4"></span>
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <main class="store-container">
+    
+    <!-- CATEGORY NAVIGATION BAR -->
+    <nav class="category-nav">
+      <button class="cat-btn active" data-category="all" data-i18n="cat_all">All Items</button>
+      <button class="cat-btn" data-category="food-drink" data-i18n="cat_food">Food & Drinks</button>
+      <button class="cat-btn" data-category="clothing-men" data-i18n="cat_men">Men's Apparel</button>
+      <button class="cat-btn" data-category="clothing-women" data-i18n="cat_women">Women's Apparel</button>
+      <button class="cat-btn" data-category="jewelry-men" data-i18n="cat_jewelry">Watches & Jewelry</button>
+      <button class="cat-btn" data-category="gaming" data-i18n="cat_gaming">Gaming Laptops & PCs</button>
+      <button class="cat-btn" data-category="peripherals" data-i18n="cat_peripherals">Tech Accessories</button>
+      <button class="cat-btn" data-category="furniture" data-i18n="cat_furniture">Furniture</button>
+    </nav>
+
+    <!-- PRODUCT DISPLAY GRID -->
+    <section id="product-grid" class="product-grid">
+      <!-- Dynamically generated via app.js -->
+    </section>
+
+  </main>
+
+  <!-- PRODUCT DETAILS MODAL -->
+  <div id="product-modal" class="modal" style="display: none;">
+    <div class="modal-content product-modal-content">
+      <span id="product-modal-close" class="close-modal" role="button" tabindex="0" aria-label="Close">&times;</span>
+      <div class="product-modal-body">
+        <div class="modal-img-container">
+          <img id="product-modal-img" src="" alt="Product Image">
+        </div>
+        <div class="modal-info-container">
+          <span id="product-modal-category" class="category-badge"></span>
+          <h2 id="product-modal-title"></h2>
+          <div id="product-modal-rating" class="modal-rating"></div>
+          <p id="product-modal-description" class="modal-description"></p>
+          <div class="modal-footer-action">
+            <div id="product-modal-price" class="modal-price"></div>
+            <button id="product-modal-add-btn" class="btn" data-i18n="add_to_cart">Add to Reserve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHOPPING CART MODAL -->
+  <div id="cart-modal" class="modal" style="display: none;">
+    <div class="modal-content cart-modal-content">
+      <div class="modal-header">
+        <h3 data-i18n="your_cart">Your Shopping Cart</h3>
+        <span id="cart-modal-close" class="close-modal" role="button" tabindex="0" aria-label="Close">&times;</span>
+      </div>
+      <div id="cart-items" class="cart-items-container"></div>
+      
+      <!-- PROMO CODE SECTION -->
+      <div class="promo-container">
+        <input type="text" id="promo-input" class="promo-input" autocomplete="off" aria-label="Promo code" data-i18n-placeholder="promo_code_placeholder" placeholder="Enter Promo Code">
+        <button id="apply-promo-btn" class="btn outline promo-btn" data-i18n="apply_promo">Apply</button>
+      </div>
+
+      <!-- CART SUMMARY SECTION -->
+      <div class="cart-summary">
+        <div class="summary-line">
+          <span data-i18n="subtotal">Subtotal</span>: <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-line">
+          <span data-i18n="delivery_fee">Delivery Fee</span>: <span id="cart-delivery">$0.00</span>
+        </div>
+        <div id="discount-row" class="summary-line discount-text" style="display: none;">
+          <span data-i18n="discount">Discount</span>: <span id="cart-discount">-$0.00</span>
+        </div>
+        <div class="total-line">
+          <span data-i18n="total">Total</span>: <span id="cart-total">$0.00</span>
+        </div>
+        <button id="checkout-btn" class="btn checkout-btn" data-i18n="checkout">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT SUCCESS MODAL -->
+  <div id="checkout-success-modal" class="modal" style="display: none;">
+    <div class="modal-content success-modal-content">
+      <div class="success-icon">✨</div>
+      <h3 data-i18n="order_success">Order Placed Successfully!</h3>
+      <button id="checkout-success-close" class="btn" data-i18n="continue_shopping">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast-notification" class="toast">
+    <span id="toast-message"></span>
+  </div>
+
+  <!-- Compiled from src/*.ts with "npm run build". ES modules need a local server (npm run serve). -->
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

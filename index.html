@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniStore - Sign In</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="enhance.css">
+</head>
+<body class="auth-body">
+
+  <!-- TOP-RIGHT CONTROLS FOR AUTH PAGE -->
+  <div class="auth-nav-controls">
+    <!-- Theme Switcher -->
+    <button id="theme-toggle" aria-label="Toggle Theme">☀️</button>
+
+    <!-- Language Selector -->
+    <select id="lang-select" class="lang-dropdown">
+      <option value="en">English 🇬🇧</option>
+      <option value="ar">العربية 🇸🇦</option>
+    </select>
+  </div>
+
+  <!-- AUTHENTICATION CARD -->
+  <div class="auth-card">
+    <h2 id="auth-title" data-i18n="welcome_back">Welcome Back</h2>
+
+    <form id="auth-form">
+      <div id="name-group" class="form-group" style="display: none;">
+        <label for="username" data-i18n="full_name">Full Name</label>
+        <input type="text" id="username" placeholder="John Doe">
+      </div>
+
+      <div class="form-group">
+        <label for="email" data-i18n="email_label">Email Address</label>
+        <input type="email" id="email" required placeholder="name@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="password" data-i18n="password_label">Password</label>
+        <div class="password-wrap">
+          <input type="password" id="password" required placeholder="••••••••">
+          <button type="button" id="toggle-password" class="eye-btn" aria-label="Show password">👁️</button>
+        </div>
+      </div>
+
+      <button type="submit" id="auth-btn" class="btn" data-i18n="login_btn">Log In</button>
+    </form>
+
+    <div style="margin-top: 1rem; text-align: center;">
+      <button id="guest-btn" class="btn outline" style="width: 100%;" data-i18n="continue_guest">Continue as Guest</button>
+    </div>
+
+    <div class="auth-toggle">
+      <span id="toggle-text" data-i18n="no_account">Don't have an account?</span>
+      <a href="#" id="toggle-auth" data-i18n="signup_link">Sign Up</a>
+    </div>
+  </div>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

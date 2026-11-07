@@ -1,0 +1,27 @@
+{
+  "name": "omnistore",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build:client": "tsc -p tsconfig.json",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build": "npm run build:client && npm run build:server",
+    "watch": "tsc -p tsconfig.json --watch",
+    "start": "node dist-server/server/server.js",
+    "dev": "npm run build && npm run start",
+    "serve": "npm run start",
+    "db:check": "node dist-server/server/selftest.js",
+    "db:import": "node dist-server/server/import-json.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "dependencies": {
+    "pg": "^8.11.0"
+  }
+}
